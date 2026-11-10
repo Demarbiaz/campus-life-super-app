@@ -1,0 +1,44 @@
+
+/* Main website styling */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+/* Main headings */
+h1 {
+    color: #222;
+    font-weight: bold;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Navigation links */
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #cccccc !important;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 6px;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+}
