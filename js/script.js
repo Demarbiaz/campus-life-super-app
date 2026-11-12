@@ -1,41 +1,34 @@
 
-// Welcome message
-console.log("Welcome to Campus Life!");
-
-// Announcement button
-const announcementButton = document.getElementById("announcementButton");
-
-if (announcementButton) {
-    announcementButton.addEventListener("click", function() {
-        alert("Welcome! Check your assignments and campus updates.");
-    });
-}
-
 // API setup
 const campusAPI = "https://jsonplaceholder.typicode.com/posts/1";
 
-// Get information from the API
-fetch(campusAPI)
-    .then(response => {
+// Get campus updates from the API
+async function loadCampusUpdates() {
+    const apiInfo = document.getElementById("apiInfo");
+
+    if (!apiInfo) return;
+
+    apiInfo.textContent = "Loading campus updates...";
+
+    try {
+        const response = await fetch(campusAPI);
+
         if (!response.ok) {
-            throw new Error("API request failed");
+            throw new Error("Could not load updates");
         }
-        return response.json();
-    })
-    .then(data => {
-        const apiInfo = document.getElementById("apiInfo");
 
-        if (apiInfo) {
-            apiInfo.textContent = data.title;
-        }
-    })
-    .catch(error => {
-        const apiInfo = document.getElementById("apiInfo");
+        const data = await response.json();
 
-        if (apiInfo) {
-            apiInfo.textContent = "Campus updates are unavailable right now.";
-        }
+        // Display information from the API
+        apiInfo.textContent = data.title;
+
+    } catch (error) {
+        apiInfo.textContent =
+            "Campus updates are unavailable right now.";
 
         console.log("API Error:", error);
-    });
+    }
+}
 
+// Load updates when the page opens
+loadCampusUpdates();
