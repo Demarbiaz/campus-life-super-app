@@ -20,7 +20,7 @@ async function loadCampusUpdates() {
         const data = await response.json();
 
         // Display information from the API
-        apiInfo.textContent = data.title;
+       apiInfo.textContent = "Campus Update: New events and activities are coming soon! Check back for more information.";
 
     } catch (error) {
         apiInfo.textContent =
