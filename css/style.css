@@ -4,6 +4,7 @@ body {
     background-color: #f2f2f2;
     font-family: Arial, sans-serif;
     color: #222;
+    margin: 0;
 }
 
 /* Main headings */
@@ -14,6 +15,12 @@ h1 {
 
 h2, h3 {
     color: #333;
+}
+
+/* Make images fit their containers */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Cards */
@@ -41,4 +48,58 @@ nav a:hover {
 /* Footer */
 footer {
     margin-top: 50px;
+}
+
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+    main.container {
+        margin-top: 30px !important;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 576px) {
+    body {
+        font-size: 15px;
+    }
+
+    main.container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    nav .container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    nav .container > div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .btn {
+        margin-bottom: 8px;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
 }
